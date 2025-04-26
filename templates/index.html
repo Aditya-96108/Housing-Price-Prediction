@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mumbai House Price Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">🏠 Mumbai Housing</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#predict">Predict</a></li>
+    <li><a href="#about">About Mumbai</a></li>
+  </ul>
+</nav>
+
+<header id="home" class="hero-section">
+  <h1>Welcome to Mumbai House Price Predictor</h1>
+  <p>Find the perfect price for your dream home!</p>
+</header>
+
+<section id="predict" class="container">
+  <h2>Predict House Price</h2>
+  
+  <label for="area">Area (sq ft):</label>
+  <input type="number" id="area" placeholder="Enter area in square feet" required>
+
+  <label for="bedrooms">Number of Bedrooms:</label>
+  <select id="bedrooms" required>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+
+  <label for="location">Location:</label>
+  <select id="location" required>
+    <option value="Andheri West">Andheri West</option>
+    <option value="Bandra West">Bandra West</option>
+    <option value="Borivali East">Borivali East</option>
+    <option value="Chembur">Chembur</option>
+    <option value="Dadar West">Dadar West</option>
+    <option value="Goregaon East">Goregaon East</option>
+    <option value="Juhu">Juhu</option>
+    <option value="Khar West">Khar West</option>
+    <option value="Malad West">Malad West</option>
+    <option value="Powai">Powai</option>
+    <option value="Santacruz West">Santacruz West</option>
+    <option value="Vile Parle West">Vile Parle West</option>
+    <option value="Worli">Worli</option>
+  </select>
+
+  <button onclick="predictPrice()">Predict Price</button>
+  
+  <div id="result"></div>
+  <div id="location-info"></div>
+</section>
+
+<section id="about" class="about-section">
+  <h2>About Mumbai</h2>
+  <p>Mumbai, often called the "City of Dreams," is India's financial capital and 
+    a vibrant metropolis on the western coast. Known for its bustling streets, 
+    diverse culture, and iconic landmarks like the Gateway of India and Marine Drive, 
+    it blends tradition with modernity. As a hub for Bollywood, commerce, and innovation, 
+    Mumbai attracts millions with its fast-paced lifestyle and endless opportunities, 
+    all set against the backdrop of the Arabian Sea.</p>
+</section>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

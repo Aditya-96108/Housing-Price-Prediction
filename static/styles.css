@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('mumbai.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #333;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(50,50,50,0.8) 100%);
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.5s ease-in-out;
+  font-weight: 600;
+}
+
+/* Logo styles */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #00ffd0;
+  transform: scale(1.1);
+}
+
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0.1));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.container {
+  max-width: 500px;
+  background: rgba(255,255,255,0.9);
+  margin: 120px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.container h2 {
+  margin-bottom: 20px;
+  color: #1c1c1c;
+}
+
+label {
+  margin-top: 10px;
+  display: block;
+  font-weight: 600;
+}
+
+input, select {
+  width: 100%;
+  margin: 10px 0 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #ff5722;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #e64a19;
+}
+
+#result, #location-info {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.about-section {
+  margin: 50px;
+  background: rgba(255,255,255,0.9);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Sparkle effect */
+.sparkle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: gold;
+  animation: sparkleAnim 1s forwards;
+}
+
+@keyframes sparkleAnim {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+/* ---------- Responsive Section ---------- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 15px;
+    display: none;
+  }
+  
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+  
+  .container {
+    margin: 100px 20px;
+    padding: 20px;
+  }
+  
+  .about-section {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+  button {
+    font-size: 0.9rem;
+  }
+}
